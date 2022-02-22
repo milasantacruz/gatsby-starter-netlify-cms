@@ -8,4 +8,6 @@ featuredimage: /img/blog-index.jpg
 tags:
   - luna
 ---
+![](/img/blog-index.jpg)
+
 sdfdf
