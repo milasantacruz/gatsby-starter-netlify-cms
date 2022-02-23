@@ -12,6 +12,7 @@ import FullWidthImage from "../components/FullWidthImage";
 // eslint-disable-next-line
 export const ProductPageTemplate = ({
   image,
+  video,
   title,
   heading,
   description,
@@ -98,6 +99,7 @@ export const ProductPageTemplate = ({
 
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  video: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
@@ -155,20 +157,13 @@ export const productPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
+        image 
+        video
         heading
         description
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
-            }
+            image 
             text
           }
           heading
@@ -179,27 +174,15 @@ export const productPageQuery = graphql`
           description
           image1 {
             alt
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
-              }
-            }
+            image 
           }
           image2 {
             alt
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 526, quality: 92, layout: CONSTRAINED)
-              }
-            }
+            image 
           }
           image3 {
             alt
-            image {
-              childImageSharp {
-                gatsbyImageData(quality: 72, layout: FULL_WIDTH)
-              }
-            }
+            image 
           }
         }
         testimonials {
@@ -207,11 +190,7 @@ export const productPageQuery = graphql`
           quote
         }
 
-        full_image {
-          childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
-          }
-        }
+        full_image 
         pricing {
           heading
           description
