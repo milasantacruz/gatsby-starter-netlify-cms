@@ -24,7 +24,7 @@ export const ProductPageTemplate = ({
 }) => {
   const heroImage = getImage(image) || image;
   const fullWidthImage = getImage(fullImage) || fullImage;
-
+  console.log(video)
   return (
     <div className="content">
       <FullWidthImage img={heroImage} title={title} />
